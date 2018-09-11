@@ -33,6 +33,6 @@ const store = createStore(
 
 console.log("State in store: " + store.getState());
 
-ReactDOM.render(<Provider store={store}><App /></Provider>, 
+ReactDOM.render(<Provider store={store}><App randomProps="whatever"/></Provider>, 
     document.getElementById('root'));
 registerServiceWorker();
