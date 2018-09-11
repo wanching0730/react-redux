@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 
 function reducer (state, action) {
     if(action.type === "changeState") {
@@ -14,7 +14,21 @@ function reducer (state, action) {
     
 }
 
-const store = createStore(reducer);
+function productReducer(state = [], action) {
+    return state;
+}
+
+function userReducer(state = '', action) {
+    return state;
+}
+
+const allReducers = combineReducers({
+    products: productReducer,
+    user: userReducer
+})
+
+
+const store = createStore(allReducers);
 
 console.log("State in store: " + store.getState());
 
