@@ -22,9 +22,9 @@ const allReducers = combineReducers({
     user: userReducer
 })
 
-// determine initial values for the states
 const store = createStore(
     allReducers, {
+    // determine initial values for the states
     products: [{name: 'iphone'}],
     user: 'Michael'
     },
